@@ -210,8 +210,8 @@ function myFunction() {
 	} catch {
 		console.log('Error2')
 	}
-        localStorage.setItem("tgtoken",token)
-        localStorage.setItem("groupid",managed)
+        localStorage.setItem("tgtoken",document.getElementById("tgtoken").value)
+        localStorage.setItem("groupid",document.getElementById("gtoupid").value)
 }
 function manager() {
 	firstFunction()
