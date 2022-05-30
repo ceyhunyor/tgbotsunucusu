@@ -9,8 +9,8 @@
 <p>Genel Amaçlı Telegram Bot Sunucusu</p>
 <p><label for="myText">Telegram JSON:</label>
 <input type="text" id="myText"></p>
-<p><label for="myText">Telegram URL:</label>
-<input type="text" id="tgurl"></p>
+<p><label for="myText">Telegram Token:</label>
+<input type="text" id="tgtoken"></p>
 <p><label for="myText">Ana Grup:</label>
 <input type="text" id="groupid"></p>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -28,7 +28,7 @@ var managed;
 //const date = new Date();
 //const axios = require('axios');
 function firstFunction() {
-token = 'https://api.telegram.org/bot' + document.getElementById("tgurl").value;
+token = 'https://api.telegram.org/bot' + document.getElementById("tgtoken").value;
 managed = document.getElementById("groupid").value;
 
 const options = {
