@@ -210,10 +210,17 @@ function myFunction() {
 	} catch {
 		console.log('Error2')
 	}
+        localStorage.setItem("tgtoken",token)
+        localStorage.setItem("groupid",managed)
 }
 function manager() {
 	firstFunction()
 	setTimeout(myFunction,2500)
+}
+try{
+document.getElementById("tgtoken").value = localStorage.getItem("tgtoken");
+document.getElementById("groupid").value = localStorage.getItem("groupid");
+}catch{
 }
 firstFunction()
 setTimeout(myFunction,2500)
