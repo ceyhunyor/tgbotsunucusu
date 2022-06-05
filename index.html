@@ -97,7 +97,7 @@ function sender(value) {
 		} else if (chatid == managed && textmes.startsWith("/engelle")){
 			let prodest_id = textmes.split(' ');
 			try{let banlist = prodest_id.slice(1);
-				blacklist.push(banlist)
+				blacklist = blacklist.concat(banlist);
 				blacklist.sort()
 				console.log(banlist)
 			}catch{
