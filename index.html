@@ -24,11 +24,12 @@ var resultjson = {time:10, data:[]};
 var token;
 var blacklist = [];
 var managed;
+var temptoken;
 document.getElementById("myText").readOnly = true
 //const date = new Date();
 //const axios = require('axios');
 function firstFunction() {
-let temptoken = document.getElementById("tgtoken").value;
+temptoken = document.getElementById("tgtoken").value;
 temptoken  = JSON.parse(temptoken);
 token = 'https://api.telegram.org/bot' + temptoken.token;
 managed = temptoken.groupid;
