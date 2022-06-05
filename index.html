@@ -9,10 +9,8 @@
 <p>Genel Amaçlı Telegram Bot Sunucusu</p>
 <p><label for="myText">Telegram JSON:</label>
 <input type="text" id="myText"></p>
-<p><label for="myText">Telegram Token:</label>
+<p><label for="myText">Telegram JSON:</label>
 <input type="text" id="tgtoken"></p>
-<p><label for="myText">Ana Grup:</label>
-<input type="text" id="groupid"></p>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 var last_update;
@@ -28,8 +26,10 @@ var managed;
 //const date = new Date();
 //const axios = require('axios');
 function firstFunction() {
-token = 'https://api.telegram.org/bot' + document.getElementById("tgtoken").value;
-managed = document.getElementById("groupid").value;
+let temptoken = document.getElementById("tgtoken").value;
+temptoken  = JSON.parse(temptoken);
+token = 'https://api.telegram.org/bot' + temptoken.token;
+managed = temptoken.groupid;
 
 const options = {
 
@@ -207,8 +207,8 @@ function myFunction() {
 	} catch {
 		console.log('Error2')
 	}
-        localStorage.setItem("tgtoken",document.getElementById("tgtoken").value)
-        localStorage.setItem("groupid",document.getElementById("gtoupid").value)
+	temptoken['blacklist'] = blacklist;
+        localStorage.setItem("tgtoken",JSON.stringify(temptoken))
 }
 function manager() {
 	firstFunction()
@@ -216,7 +216,6 @@ function manager() {
 }
 try{
 document.getElementById("tgtoken").value = localStorage.getItem("tgtoken");
-document.getElementById("groupid").value = localStorage.getItem("groupid");
 }catch{
 }
 firstFunction()
