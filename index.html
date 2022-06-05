@@ -216,6 +216,7 @@ function myFunction() {
 	}
 	temptoken['blacklist'] = blacklist;
         localStorage.setItem("tgtoken",JSON.stringify(temptoken))
+	document.getElementById("tgtoken").value = localStorage.getItem("tgtoken");
 }
 function manager() {
 	firstFunction()
