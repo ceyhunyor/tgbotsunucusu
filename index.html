@@ -135,7 +135,7 @@ function sender(value) {
 		} else if (chatid == managed && textmes.startsWith("/forwardoff")){
 			isforward = false;
 		} else if (typechat == "supergroup" || typechat == "group"){
-			if(textmes.startsWith("@kopeksorunubot") || textmes.startsWith("/yolla")){
+			if(textmes.startsWith("/yolla")){
 			console.log('Gruptan')
 			if(isforward){
 			fetch(token+'/forwardmessage?chat_id='+managed+'&from_chat_id='+chatid+'&message_id='+messageid)
